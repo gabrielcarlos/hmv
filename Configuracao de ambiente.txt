@@ -1,0 +1,8 @@
+1) Instalação do python 3.6.0 para Windows
+2) Instalação do django 
+	cmd > easy_install django
+3) Criando um projeto 
+	cmd > django-admin startproject websitehmv
+4) IDE - PyCharm
+5) Instalação do gitbash
+6) Criação do repositório no git para o projeto
