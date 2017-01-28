@@ -1,11 +1,54 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Solicitação</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <title>Lista de Solicitações</title>
 </head>
 <body>
-    <p>Hi there!</p>
-    <p>It works!</p>
+
+<div class="page-header">
+    <h1 style="margin-left:20px"><a href="/">Lista de Solicitações</a></h1>
+</div>
+
+
+<button type="button" class="btn btn-primary" style="margin-left:20px">Novo</button>
+<button type="button" class="btn btn-primary" style="margin-left:5px">Fechar</button>
+
+<br />
+<div>
+    <table style="width:100%" class="table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Solicitante</th>
+            <th>Teleconsultor</th>
+            <th>Descrição</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+
+    {% if solicitacoes %}
+    {% for solicitacao in solicitacoes %}
+      <tr>
+        <td>{{ solicitacao.id }}</td>
+        <td>{{ solicitacao.solicitante.txtNome }}</td>
+        <td>{{ solicitacao.teleconsultor.txtNome }}</td>
+        <td>{{ solicitacao.txtDescricao }}</td>
+        <td><a href="/">Excluir</a>
+      </tr>
+        {% endfor %}
+        {% else %}
+      <tr>
+        <td colspan="5">Nenhum registro encontrado</td>
+      </tr>
+          {% endif %}
+        </tbody>
+
+     </table>
+</div>
+
 </body>
 </html>
